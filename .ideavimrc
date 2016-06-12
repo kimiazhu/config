@@ -1,3 +1,11 @@
+"=========================================================================
+" DesCRiption: This config is for early access version of ideavim.
+" Last Change: 2016-06-12 
+" Version: 1.90
+"=========================================================================
+" Early Access Version of IdeaVim is here:
+" https://plugins.jetbrains.com/plugins/eap/ideavim
+
 set cursorline " 突出显示当前行
 set ruler " 打开状态栏标尺
 set shiftwidth=4 " 设定 << 和 >> 命令移动时的宽度为 4
