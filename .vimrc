@@ -3,10 +3,11 @@
 " Last Change: 2016-06-12 
 " Version: 1.90
 "=========================================================================
+" First of all, setup vundle with git
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 set nocompatible " 关闭 vi 兼容模式
 filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
