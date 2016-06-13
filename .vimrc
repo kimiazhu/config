@@ -22,7 +22,7 @@ filetype plugin indent on    " required
 runtime macros/matchit.vim
 
 syntax on " 自动语法高亮
-colorscheme monokai " 设定配色方案
+"colorscheme monokai " 设定配色方案
 set number " 显示行号
 set cursorline " 突出显示当前行
 set ruler " 打开状态栏标尺
