@@ -24,6 +24,7 @@ runtime macros/matchit.vim
 syntax on " 自动语法高亮
 "colorscheme monokai " 设定配色方案
 set encoding=utf-8
+set noundofile
 set fileencoding=utf-8
 set number " 显示行号
 set cursorline " 突出显示当前行
