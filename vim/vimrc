@@ -1,12 +1,12 @@
 "=========================================================================
-" DesCRiption: 适合自己使用的vimrc文件，for Linux/Windows, GUI/Console
-" Last Change: 2016-06-12 
-" Version: 1.90
+" DesCRiption: My vimrc for Linux/Windows, GUI/Console
+" Last Change: 2016-07-19
+" Version: 1.91: add C# support
 "=========================================================================
 " First of all, setup vundle with git
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-set nocompatible " 关闭 vi 兼容模式
+set nocompatible " no compatible with vi
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -17,6 +17,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tpope/vim-surround'
+" Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'tpope/vim-dispatch'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 runtime macros/matchit.vim
@@ -27,14 +31,14 @@ set encoding=utf-8
 set noundofile
 set fileencoding=utf-8
 set number
-set cursorline " 突出显示当前行
-set ruler " 打开状态栏标尺
-set shiftwidth=4 " 设定 << 和 >> 命令移动时的宽度为 4
-set softtabstop=4 " 使得按退格键时可以一次删掉 4 个空格
-set tabstop=4 " 设定 tab 长度为 4
-set nobackup " 覆盖文件时不备份
-set autochdir " 自动切换当前目录为当前文件所在的目录
-set backupcopy=yes " 设置备份时的行为为覆盖
+set cursorline " highlight current line
+set ruler "open ruler in status bar
+set shiftwidth=4 "set << and >> move 4 spaces
+set softtabstop=4 " delete 4 spaces by click delete ke
+set tabstop=4 
+set nobackup " override without backups
+set autochdir " auth change work dir to current dir
+set backupcopy=yes " when backup file exists, override it
 set ignorecase smartcase
 set nowrapscan
 set incsearch
