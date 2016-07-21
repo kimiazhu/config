@@ -20,7 +20,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()            " required
 filetype plugin indent on    " required
 runtime macros/matchit.vim
@@ -87,3 +89,10 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+" NERDTree config
+map <F2> :NERDTreeToggle<CR>
+" close NERDTree if no other window open beside NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+" auto start NERDTree
+"autocmd vimenter * NERDTree
