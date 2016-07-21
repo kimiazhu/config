@@ -92,6 +92,13 @@ map <Leader>k <Plug>(easymotion-k)
 
 " NERDTree config
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeWinSize=32
+let NERDTreeWinPos="left"
+let NERDTreeShowHidden=0
+" Do not display verbose help messages
+"let NERDTreeMinimalUI=1
+" Auto delete buffer after file was deleted
+let NERDTreeAutoDeleteBuffer=1
 " close NERDTree if no other window open beside NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 " auto start NERDTree
