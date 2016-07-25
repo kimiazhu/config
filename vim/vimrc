@@ -21,7 +21,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -96,7 +96,7 @@ let NERDTreeWinSize=32
 let NERDTreeWinPos="left"
 let NERDTreeShowHidden=1
 " Do not display verbose help messages
-let NERDTreeMinimalUI=1
+" let NERDTreeMinimalUI=1
 " Auto delete buffer after file was deleted
 let NERDTreeAutoDeleteBuffer=1
 " close NERDTree if no other window open beside NERDTree
