@@ -12,6 +12,7 @@ add-alias ()
 ## Bash
 ############################################################
 
+alias sudo='sudo '
 alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../../"
