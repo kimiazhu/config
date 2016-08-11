@@ -12,7 +12,10 @@ add-alias ()
 ## Bash
 ############################################################
 
-alias sudo='sudo '
+alias sudo='sudo ' 
+alias xargs='xargs '
+alias env='env '
+alias nohup='nohup '
 alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../../"
