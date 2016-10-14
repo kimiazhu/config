@@ -23,6 +23,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 call vundle#end()            " required
 filetype plugin indent on    " required
 runtime macros/matchit.vim
@@ -103,3 +104,11 @@ let NERDTreeAutoDeleteBuffer=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 " auto start NERDTree
 "autocmd vimenter * NERDTree
+
+" ctags and tagbar/taglist
+" if you are on macOS, you need to install ctags by `brew install ctags` to
+" replace the system's ctag program, then run 'alias `brew --prefix`/bin/ctags'
+let g:tagbar_ctags_bin='ctags'
+"let g:tagbar_width=30
+map <F3> :Tagbar<CR>
+"autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() "如果是c语言的程序的话，tagbar自动开启
