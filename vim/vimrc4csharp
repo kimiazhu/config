@@ -79,6 +79,14 @@ let g:ycm_collect_identifiers_from_tags_files=1    " 开启 YCM 基于标签引�
 let g:ycm_min_num_of_chars_for_completion=2    " 从第2个键入字符就开始罗列匹配项
 let g:ycm_cache_omnifunc=0    " 禁止缓存匹配项,每次都重新生成匹配项
 let g:ycm_seed_identifiers_with_syntax=1    " 语法关键字补全
+" 在注释输入中也能补全
+let g:ycm_complete_in_comments = 1
+" 在字符串输入中也能补全
+let g:ycm_complete_in_strings = 1
+" 注释和字符串中的文字也会被收入补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif	"离开插入模式后自动关闭预览窗口
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"	"回车即选中当前项
 
 let g:vim_markdown_toc_autofit = 1
 
@@ -88,7 +96,7 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " 定义存放代码片段的文件夹
 " .vim/snippets下，使用自定义和默认的，将会的到全局，有冲突的会提示
-let g:UltiSnipsSnippetDirectories=["snippets", "bundle/ultisnips/UltiSnips"]
+"let g:UltiSnipsSnippetDirectories=["snippets", "bundle/ultisnips/UltiSnips"]
 
 " let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_leader_key='<Space>'
