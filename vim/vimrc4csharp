@@ -72,7 +72,8 @@ setlocal foldlevel=1 " 设置折叠层数为
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 用空格键来开关折叠
 
-
+" ycm config: https://jonasdevlieghere.com/a-better-youcompleteme-config/
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:vim_markdown_toc_autofit = 1
 
 " let g:EasyMotion_do_mapping = 0 " Disable default mappings
