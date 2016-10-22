@@ -33,6 +33,7 @@ syntax on
 set encoding=utf-8
 set noundofile
 " set fileencoding=utf-8
+" see here: http://edyfox.codecarver.org/html/vim_fileencodings_detection.html
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set number
 set cursorline " 突出显示当前行
