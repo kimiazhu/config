@@ -25,6 +25,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 runtime macros/matchit.vim
@@ -90,6 +92,8 @@ inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"	"回车即选中当
 
 let g:vim_markdown_toc_autofit = 1
 
+let mapleader=','
+
 " for ultisnips
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
@@ -99,7 +103,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "let g:UltiSnipsSnippetDirectories=["snippets", "bundle/ultisnips/UltiSnips"]
 
 " let g:EasyMotion_do_mapping = 0 " Disable default mappings
-let g:EasyMotion_leader_key='<Space>'
+" let g:EasyMotion_leader_key='<Space>'
+let g:EasyMotion_leader_key=','
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 nmap F <Plug>(easymotion-overwin-f2)
 " nmap <Leader>l <Plug>(easymotion-overwin-f2)
