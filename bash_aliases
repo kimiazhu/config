@@ -57,6 +57,7 @@ alias lla="lal"
 ############################################################
 
 alias g="git"
+alias ga="git add"
 alias gb="git branch -a -v"
 alias gc="git commit -v"
 alias gca="git commit -v -a"
