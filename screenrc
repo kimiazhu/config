@@ -1,0 +1,15 @@
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{= G}%-Lw%{= .Y}%50> %n*%f %t%{= G}%+Lw%< %{= G}%-=%D %c:%s %m/%d/%Y"
+startup_message off
+
+#  定义screen的功能键为Ctrl-Z。向终端输入Ctrl-Z时应按 Ctrl-Z z。
+escape ^Zz
+
+vbell off
+autodetach on
+msgwait 1
+shell bash
+termcapinfo xterm|xterms|xs|rxvt|urxvt|tila ti@:te@
+bindkey -k F1 prev
+bindkey -k F2 next
