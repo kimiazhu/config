@@ -2,6 +2,7 @@
 " DesCRiption: My vimrc for Linux/Windows, GUI/Console
 " Last Change: 2016-07-19
 " Version: 1.91: add C# support
+" Version: 1.92: add tagbar for Golang
 "=========================================================================
 " First of all, setup vundle with git
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
