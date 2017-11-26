@@ -313,7 +313,7 @@ alias upgrade_emacs_head='brew uninstall emacs && install_emacs_head && link_ema
 alias install_ffmpeg='brew install ffmpeg --with-libvorbis --with-theora --with-fdk-aac --with-faac --with-tools'
 
 export GREP_COLOR="1;37;41"
-alias grep="grep --color=auto"
+alias grep="grep --color=auto -n"
 alias wgeto="wget -q -O -"
 alias sha1="openssl dgst -sha1"
 alias sha2="openssl dgst -sha256"
