@@ -151,7 +151,7 @@ let g:tagbar_ctags_bin='ctags'
 "let g:tagbar_width=30
 map <F3> :Tagbar<CR>
 " 启动时自动focus
-let g:tagbar_autofocus = 1
+" let g:tagbar_autofocus = 1
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() "如果是c语言的程序的话，tagbar自动开启
 map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>  
 imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>
