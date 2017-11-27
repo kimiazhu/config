@@ -148,7 +148,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeT
 " ctags -I __THROW --file-scope=yes --langmap=c:+.h --languages=c,c++ --links=yes --c-kinds=+p --fields=+S  -R -f ~/.vim/systags /usr/include /usr/local/include
 " ========= system ctags generation command end ==========
 let g:tagbar_ctags_bin='ctags'
-"let g:tagbar_width=30
+let g:tagbar_width = 30 "设置tagbar的宽度为30列，默认40
 map <F3> :Tagbar<CR>
 " 启动时自动focus
 " let g:tagbar_autofocus = 1
