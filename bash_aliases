@@ -20,6 +20,12 @@ alias xat="tmux a -t "
 ## Bash
 ############################################################
 
+if [ `uname` = "Darwin" ]; then
+	alias rmt="rmtrash"
+	alias trash="rmtrash"
+	alias del="rmtrash"
+fi
+
 alias sudo='sudo ' 
 alias xargs='xargs '
 alias env='env '
