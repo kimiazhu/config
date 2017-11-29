@@ -13,3 +13,6 @@ shell bash
 termcapinfo xterm|xterms|xs|rxvt|urxvt|tila ti@:te@
 bindkey -k F1 prev
 bindkey -k F2 next
+
+# 让screen窗口可以用鼠标滚轮滚动
+termcapinfo xterm* ti@:te@
