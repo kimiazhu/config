@@ -27,6 +27,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'aperezdc/vim-template'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -156,6 +157,19 @@ map <F3> :Tagbar<CR>
 map <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>  
 imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>
 set tags=./tags,tags,~/.vim/systags;/
+
+
+" vim-go plugin config
+" see: https://github.com/fatih/vim-go/blob/master/doc/vim-go.txt
+"let g:go_template_file = "sample_kc.go"
+" 关闭自动创建go语言模版，我们将使用单独的模版插件
+let g:go_template_autocreate = 0
+
+" vim templates
+" see: https://github.com/aperezdc/vim-template/blob/master/doc/template.txt
+let g:templates_directory = ['~/.vim/templates']
+let g:username = 'ZHU HAIHUA'
+let g:email = 'kimiazhu@gmail.com'
 
 " GoTags config. Install by `go get -u github.com/jstemmer/gotags`
 " See https://github.com/jstemmer/gotags
