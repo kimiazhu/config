@@ -32,12 +32,11 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-airline/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'rking/ag.vim'
-"Plugin 'jeetsukumaran/vim-buffergator'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 runtime macros/matchit.vim
-let g:ctrlp_map = '<c-m>'
+"let g:ctrlp_map = '<c-m>'
 syntax on
 "colorscheme monokai
 set encoding=utf-8
