@@ -15,6 +15,7 @@ alias x="tmux"
 alias xls="tmux ls"
 alias xnew="tmux new -s"
 alias xat="tmux a -t "
+alias xkt="tmux kill-session -t "
 
 ############################################################
 ## screen

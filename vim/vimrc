@@ -95,6 +95,11 @@ inoremap { {}<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 
+" vim-go settings
+let g:go_def_reuse_buffer = 1
+inoremap <C-[> <Esc>:GoDoc<CR>
+noremap <C-[> <Esc>:GoDoc<CR>
+
 " ycm config: https://jonasdevlieghere.com/a-better-youcompleteme-config/
 " 跳转到定义处
 nnoremap <Leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>"
