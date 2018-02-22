@@ -31,7 +31,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'aperezdc/vim-template'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-airline/vim-airline'
-Plugin 'bling/vim-bufferline'
+Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'bling/vim-bufferline'
 Plugin 'rking/ag.vim'
 " Plugin 'scrooloose/syntastic'
 
@@ -41,6 +42,7 @@ runtime macros/matchit.vim
 "let g:ctrlp_map = '<c-m>'
 syntax on
 "colorscheme monokai
+set helplang=cn
 set encoding=utf-8
 set noundofile
 " set fileencoding=utf-8
@@ -79,6 +81,7 @@ set foldenable " 开始折叠
 " set foldmethod=syntax " 设置语法折叠
 set foldcolumn=0 " 设置折叠区域的宽度
 setlocal foldlevel=1 " 设置折叠层数为
+set updatetime=300
 " set foldclose=all " 设置为自动关闭折叠 
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 用空格键来开关折叠
@@ -95,10 +98,30 @@ inoremap { {}<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 
+"打开tabline功能,方便查看Buffer和切换,省去了minibufexpl插件
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+"设置切换Buffer快捷键"
+"nnoremap <C-tab> :bn<CR>
+"nnoremap <C-s-tab> :bp<CR>
+let g:airline_theme='luna'
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+
 " vim-go settings
 let g:go_def_reuse_buffer = 1
-inoremap <C-[> <Esc>:GoDoc<CR>
-noremap <C-[> <Esc>:GoDoc<CR>
+"imap <C-[> <Esc>:GoDoc<CR>
+"nmap <C-[> :GoDoc<CR>
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
 
 " ycm config: https://jonasdevlieghere.com/a-better-youcompleteme-config/
 " 跳转到定义处
@@ -172,7 +195,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeT
 " ========= system ctags generation command end ==========
 let g:tagbar_ctags_bin='ctags'
 let g:tagbar_width = 30 "设置tagbar的宽度为30列，默认40
-map <F3> :Tagbar<CR>
+noremap <F3> :Tagbar<CR>
 " 启动时自动focus
 " let g:tagbar_autofocus = 1
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() "如果是c语言的程序的话，tagbar自动开启
@@ -231,3 +254,52 @@ let g:tagbar_type_go = {
 	\ 'ctagsbin'  : 'gotags',
 	\ 'ctagsargs' : '-sort -silent'
 \ }
+
+" 按退格键时判断当前光标前一个字符，如果是左括号，则删除对应的右括号以及括号中间的内容
+function! RemovePairs()
+	let l:line = getline(".")
+	let l:previous_char = l:line[col(".")-1] " 取得当前光标前一个字符
+
+	if index(["(", "[", "{", '"', "'"], l:previous_char) != -1
+		let l:original_pos = getpos(".")
+		execute "normal %"
+		let l:new_pos = getpos(".")
+
+		" 如果没有匹配的右括号
+		if l:original_pos == l:new_pos
+			execute "normal! a<BS>"
+			return
+		end
+
+		let l:line2 = getline(".")
+		if len(l:line2) == col(".")
+			" 如果右括号是当前行最后一个字符
+			execute "normal! v%xa"
+		else
+			" 如果右括号不是当前行最后一个字符
+			execute "normal! v%xi"
+		end
+
+	else
+		execute "normal! a<BS>"
+	end
+endfunction
+" 用退格键删除一个左括号时同时删除对应的右括号
+"inoremap <BS> <ESC>:call RemovePairs()<CR>a
+
+" 输入一个字符时，如果下一个字符也是括号，则删除它，避免出现重复字符
+function! RemoveNextDoubleChar(char)
+	let l:line = getline(".")
+	let l:next_char = l:line[col(".")] " 取得当前光标后一个字符
+
+	if a:char == l:next_char
+		execute "normal! l"
+	else
+		execute "normal! i" . a:char . ""
+	end
+endfunction
+inoremap ) <ESC>:call RemoveNextDoubleChar(')')<CR>a
+inoremap ] <ESC>:call RemoveNextDoubleChar(']')<CR>a
+inoremap } <ESC>:call RemoveNextDoubleChar('}')<CR>a
+inoremap } <ESC>:call RemoveNextDoubleChar('"')<CR>a
+inoremap } <ESC>:call RemoveNextDoubleChar("'")<CR>a
