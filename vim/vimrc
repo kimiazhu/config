@@ -158,8 +158,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " let g:EasyMotion_leader_key='<Space>'
 let g:EasyMotion_leader_key=','
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-nmap <Leader>F <Plug>(easymotion-overwin-f2)
+nmap <Leader>s <Plug>(easymotion-overwin-f)
+nmap <Leader>S <Plug>(easymotion-overwin-f2)
 " nmap <Leader>l <Plug>(easymotion-overwin-f2)
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
