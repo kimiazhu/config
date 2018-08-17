@@ -225,6 +225,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" NERDTree联动当前文件
+autocmd BufEnter * silent! if (bufname('%') !~# 'NERD_tree_') && (bufname('%') !~# 'Tagbar') | cd %:p:h | NERDTreeCWD | wincmd p | endif
+
+
 " GoTags config. Install by `go get -u github.com/jstemmer/gotags`
 " See https://github.com/jstemmer/gotags
 let g:tagbar_type_go = {

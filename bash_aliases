@@ -9,6 +9,17 @@ add-alias ()
 }
 
 ############################################################
+## vim
+############################################################
+alias vi=vim
+alias v=vim
+alias mvim=/Applications/mvim
+alias mvi=mvim
+alias vm=mvim
+alias nv=nvim
+alias n=nvim
+
+############################################################
 ## tmux
 ############################################################
 alias x="tmux"
@@ -344,6 +355,9 @@ alias sha512="openssl dgst -sha512"
 alias b64="openssl enc -base64"
 alias 256color="export TERM=xterm-256color"
 alias prettyjson="python -mjson.tool"
+
+
+alias python=/usr/bin/python
 
 function flushdns {
   if pgrep mDNSResponder > /dev/null
