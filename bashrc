@@ -6,6 +6,9 @@ if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
 fi
 
+# install z by `brew install z`
+. /usr/local/homebrew/homebrew/etc/profile.d/z.sh
+
 export REDIS_HOME="/usr/local/homebrew/homebrew/Cellar/redis@3.2/3.2.11"
 export BREW_HOME="/usr/local/homebrew/homebrew"
 export MYSQL_HOME="/usr/local/homebrew/homebrew/opt/mysql@5.6"
