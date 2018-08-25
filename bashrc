@@ -24,10 +24,9 @@ export JVMSTAT_HOME="/Users/zhuhaihua/Applications/jvmstat"
 export PATH="$PATH:$JVMSTAT_HOME/bin:$ADB_HOME:$GOPATH/bin:$REDIS_HOME/bin"
 
 _SHELL=`ps | grep $$ | grep -v grep | awk '{print $4}'`
-_IS_ZSH=`echo ${_SHELL} | grep "zsh"`
-if [ -n "$_IS_ZSH" ]; then
-  export PS1="%T ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)"
-else
+_IS_BASH=`echo ${_SHELL} | grep "bash"`
+if [ -n "$_IS_BASH" ]; then
+  # export PS1='%T ${ret_status} %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
   export PS1="[\u@\h \W]\$ "
 fi
 
