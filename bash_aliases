@@ -115,7 +115,7 @@ alias gsl="git shortlog -sn"
 alias gw="git whatchanged"
 alias gsu="git submodule update --init --recursive"
 alias gi="git config branch.master.remote 'origin'; git config branch.master.merge 'refs/heads/master'"
-if [ `which hub 2> /dev/null` ]; then
+if [ `which hub 2 > /dev/null` ]; then
   alias git="hub"
 fi
 alias git-churn="git log --pretty="format:" --name-only | grep -vE '^(vendor/|$)' | sort | uniq -c | sort"
