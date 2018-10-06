@@ -6,27 +6,21 @@ if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
 fi
 
-# install antigen.zsh by `curl -L git.io/antigen > ~/bin/antigen.zsh`
-# source ~/bin/antigen.zsh
-
 export BREW_HOME="/usr/local/Cellar"
-# install z by `brew install z`
-#. /usr/local/homebrew/homebrew/etc/profile.d/z.sh
-. /usr/local/etc/profile.d/z.sh
 export REDIS_HOME="$BREW_HOME/redis@3.2/3.2.11"
 export MYSQL_HOME="$BREW_HOME/opt/mysql@5.6"
 export GOROOT="/usr/local/go/"
-#export GOPATH=/Users/zhuhaihua/Development/GoProject;/Users/zhuhaihua/Development/jxserver/server/code/source/GoServices
-#export GOPATH="/Users/zhuhaihua/QNap/homes/admin/Development/seasun/gopath/"
-export GOPATH="/Users/zhuhaihua/Development/GoProject"
+#export GOPATH=$HOME/Development/GoProject;$HOME/Development/jxserver/server/code/source/GoServices
+#export GOPATH="$HOME/QNap/homes/admin/Development/seasun/gopath/"
+export GOPATH="$HOME/Development/GoProject"
 export GOOS="darwin"
 export GOARCH="amd64"
-export ISTIO_HOME="/Users/zhuhaihua/.minikube/istio-0.8.0"
+export ISTIO_HOME="$HOME/.minikube/istio-0.8.0"
 
-export ANDROID_HOME="/Users/zhuhaihua/Library/Android/sdk"
-export ADB_HOME="/Users/zhuhaihua/Library/Android/sdk/platform-tools"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ADB_HOME="$HOME/Library/Android/sdk/platform-tools"
 #export MONO_HOME="/Applications/Unity/Unity.app/Contents/Frameworks/Mono"
-export JVMSTAT_HOME="/Users/zhuhaihua/Applications/jvmstat"
+export JVMSTAT_HOME="$HOME/Applications/jvmstat"
 export PATH="$PATH:$JVMSTAT_HOME/bin:$ADB_HOME:$GOPATH/bin:$REDIS_HOME/bin"
 
 _SHELL=`ps | grep $$ | grep -v grep | awk '{print $4}'`
@@ -53,8 +47,8 @@ alias ctags="/usr/local/bin/ctags"
 
 alias mck="sshfs root@10.20.109.128:/root/CKS1 ~/Development/share/"
 
-#mono '/Users/zhuhaihua/.vim/bundle/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe' -p 2000 -s '/Users/zhuhaihua/Development/unity/2DPlatformer-SLua/2DPlatformer-SLua.sln'
-alias cs="mono '/Users/zhuhaihua/.vim/bundle/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe' -p 2000"
+#mono '$HOME/.vim/bundle/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe' -p 2000 -s '$HOME/Development/unity/2DPlatformer-SLua/2DPlatformer-SLua.sln'
+alias cs="mono '$HOME/.vim/bundle/omnisharp-vim/server/OmniSharp/bin/Debug/OmniSharp.exe' -p 2000"
 
 alias Unity="/Applications/Unity/Unity.app/Contents/MacOS/Unity"
 alias unity=Unity
@@ -67,8 +61,8 @@ alias unity=Unity
 #alias gs="git status"
 #alias gl="git log"
 alias cddev="cd ~/Development/GoProject && export GOPATH=~/Development/GoProject && export PATH=$PATH"
-alias cdss="cd /Users/zhuhaihua/QNap/Development/seasun/gopath && export GOPATH=/Users/zhuhaihua/QNap/Development/seasun/gopath && export PATH=$PATH"
-alias cdwork="cd /Users/zhuhaihua/QNap/Works/西山居"
-alias cdss2="cd /Users/zhuhaihua/QNap2/Development/seasun/gopath && export GOPATH=/Users/zhuhaihua/QNap2/Development/seasun/gopath && export PATH=$PATH"
-alias cdssh="cd /Users/zhuhaihua/QNap/Works/西山居/SSH"
+alias cdss="cd $HOME/QNap/Development/seasun/gopath && export GOPATH=$HOME/QNap/Development/seasun/gopath && export PATH=$PATH"
+alias cdwork="cd $HOME/QNap/Works/西山居"
+alias cdss2="cd $HOME/QNap2/Development/seasun/gopath && export GOPATH=$HOME/QNap2/Development/seasun/gopath && export PATH=$PATH"
+alias cdssh="cd $HOME/QNap/Works/西山居/SSH"
 alias go="/usr/local/go/bin/go"

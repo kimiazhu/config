@@ -98,6 +98,9 @@ plugins=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# install z by `brew install z`
+#. /usr/local/homebrew/homebrew/etc/profile.d/z.sh
+source /usr/local/etc/profile.d/z.sh
 # install antigen.zsh by `curl -L git.io/antigen > ~/bin/antigen.zsh`
 source ~/bin/antigen.zsh
 
