@@ -6,12 +6,15 @@ if [ -f ~/.bash_aliases ]; then
 	source ~/.bash_aliases
 fi
 
-# install z by `brew install z`
-. /usr/local/homebrew/homebrew/etc/profile.d/z.sh
+# install antigen.zsh by `curl -L git.io/antigen > ~/bin/antigen.zsh`
+# source ~/bin/antigen.zsh
 
-export REDIS_HOME="/usr/local/homebrew/homebrew/Cellar/redis@3.2/3.2.11"
-export BREW_HOME="/usr/local/homebrew/homebrew"
-export MYSQL_HOME="/usr/local/homebrew/homebrew/opt/mysql@5.6"
+export BREW_HOME="/usr/local/Cellar"
+# install z by `brew install z`
+#. /usr/local/homebrew/homebrew/etc/profile.d/z.sh
+. /usr/local/etc/profile.d/z.sh
+export REDIS_HOME="$BREW_HOME/redis@3.2/3.2.11"
+export MYSQL_HOME="$BREW_HOME/opt/mysql@5.6"
 export GOROOT="/usr/local/go/"
 #export GOPATH=/Users/zhuhaihua/Development/GoProject;/Users/zhuhaihua/Development/jxserver/server/code/source/GoServices
 #export GOPATH="/Users/zhuhaihua/QNap/homes/admin/Development/seasun/gopath/"

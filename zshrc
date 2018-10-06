@@ -2,12 +2,12 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/zhuhaihua/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell-kc"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -64,13 +64,10 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   autojump
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  zsh-completions
+  #zsh-syntax-highlighting
+  #zsh-autosuggestions
+  #zsh-completions
 )
-
-source ~/.bash_profile
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -100,3 +97,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# install antigen.zsh by `curl -L git.io/antigen > ~/bin/antigen.zsh`
+source ~/bin/antigen.zsh
+
+antigen use oh-my-zsh
+
+#antigen bundle git
+#antigen bundle autojump
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
+
+antigen apply
+
+source ~/.bash_profile
+source $ZSH/oh-my-zsh.sh
+cd ~
