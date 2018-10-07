@@ -4,7 +4,7 @@
 // license that can be found in the LICENSE file.
 
 // Description: %FILE%
-// Author: %USER%
+// Author: %USER% <%MAIL%>
 // Since: %FDATE%
 
 package main

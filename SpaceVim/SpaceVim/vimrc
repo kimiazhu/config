@@ -1,0 +1,86 @@
+"=============================================================================
+" vimrc --- Entry file for vim
+" Copyright (c) 2016-2017 Shidong Wang & Contributors
+" Author: Shidong Wang < wsdjeg at 163.com >
+" URL: https://spacevim.org
+" License: GPLv3
+"=============================================================================
+
+" Note: Skip initialization for vim-tiny or vim-small.
+if 1
+    execute 'source' fnamemodify(expand('<sfile>'), ':h').'/config/main.vim'
+endif
+" vim:set et sw=2
+
+set ignorecase smartcase
+" let g:spacevim_enable_ycm = 1
+
+let g:templates_directory = ['~/Development/config/vim/templates']
+let g:username = 'ZHU HAIHUA'
+let g:email = 'kimiazhu@gmail.com'
+
+" let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" let g:EasyMotion_leader_key='<Space>'
+" let g:EasyMotion_leader_key=','
+nmap ,f <Plug>(easymotion-overwin-f)
+nmap ,F <Plug>(easymotion-overwin-f2)
+nmap S <Plug>(easymotion-overwin-f2)
+" nmap <Leader>l <Plug>(easymotion-overwin-f2)
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+" nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+" nmap s <Plug>(easymotion-overwin-f2)
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+" JK motions: Line motions
+map ,j <Plug>(easymotion-j)
+map ,k <Plug>(easymotion-k)
+
+" vim-syntastic/syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+
+"打开tabline功能,方便查看Buffer和切换,省去了minibufexpl插件
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+
+" vim-go settings, 自动显示当前函数签名
+let g:go_def_reuse_buffer = 1
+"imap <C-[> <Esc>:GoDoc<CR>
+"nmap <C-[> :GoDoc<CR>
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
+
+" NERDTree自动联动当前打开文件
+" Check if NERDTree is open or active
+function IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+nmap ,n :NERDTreeFind<CR>
+nmap ,m :NERDTreeToggle<CR>
+
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+let g:gutentags_define_advanced_commands = 1
+" Highlight currently open buffer in NERDTree
+" autocmd BufEnter * call SyncTree()
+
+" autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
+" autocmd BufEnter * silent! if (bufname('%') !~# 'NERD_tree_') && (bufname('%') !~# 'Tagbar') | cd %:p:h | NERDTreeCWD | wincmd p | endif
