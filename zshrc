@@ -119,6 +119,7 @@ antigen bundle zsh-users/zsh-completions
 
 antigen apply
 
+source ~/.profile
 source ~/.bash_profile
 source $ZSH/oh-my-zsh.sh
 cd ~
