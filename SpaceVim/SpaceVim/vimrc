@@ -84,3 +84,5 @@ let g:gutentags_define_advanced_commands = 1
 
 " autocmd BufEnter * if &modifiable | NERDTreeFind | wincmd p | endif
 " autocmd BufEnter * silent! if (bufname('%') !~# 'NERD_tree_') && (bufname('%') !~# 'Tagbar') | cd %:p:h | NERDTreeCWD | wincmd p | endif
+
+set gfn=Hack\ Regular\ Nerd\ Font\ Complete:h12
