@@ -59,6 +59,7 @@ enable = false
 
 [[layers]]
 name = "tags"
+# enable = false
 
 [[layers]]
 name = "lang#dockerfile"
