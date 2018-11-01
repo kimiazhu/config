@@ -52,9 +52,10 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set number
 set cursorline " highlight current line
 set ruler "open ruler in status bar
-set shiftwidth=4 "set << and >> move 4 spaces
-set softtabstop=4 " delete 4 spaces by click delete ke
-set tabstop=4 
+set shiftwidth=2 "set << and >> move 4 spaces
+set softtabstop=2 " delete 4 spaces by click delete ke
+set tabstop=2
+set expandtab
 set nobackup " override without backups
 set autochdir " auth change work dir to current dir
 set backupcopy=yes " when backup file exists, override it
@@ -160,6 +161,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:EasyMotion_leader_key=','
 nmap <Leader>s <Plug>(easymotion-overwin-f)
 nmap <Leader>S <Plug>(easymotion-overwin-f2)
+nmap S <Plug>(easymotion-overwin-f2)
 " nmap <Leader>l <Plug>(easymotion-overwin-f2)
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
@@ -175,7 +177,9 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " NERDTree config
-map <F2> :NERDTreeToggle<CR>
+"map <F2> :NERDTreeToggle<CR>
+nmap ,n :NERDTreeFind<CR>
+nmap ,m :NERDTreeToggle<CR>
 let NERDTreeWinSize=30
 let NERDTreeWinPos="left"
 let NERDTreeShowHidden=1
@@ -226,7 +230,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " NERDTree联动当前文件
-autocmd BufEnter * silent! if (bufname('%') !~# 'NERD_tree_') && (bufname('%') !~# 'Tagbar') | cd %:p:h | NERDTreeCWD | wincmd p | endif
+"autocmd BufEnter * silent! if (bufname('%') !~# 'NERD_tree_') && (bufname('%') !~# 'Tagbar') | cd %:p:h | NERDTreeCWD | wincmd p | endif
 
 
 " GoTags config. Install by `go get -u github.com/jstemmer/gotags`
