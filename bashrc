@@ -41,7 +41,7 @@ export HOMEBREW_GITHUB_API_TOKEN="4eabbfd877bdde14759617ff743a71907a650eb4"
 # alias getopt="/usr/local/Cellar/gnu-getopt/1.1.6/bin/getopt"
 alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
 
-alias python="/usr/bin/python"
+# alias python="/usr/bin/python"
 alias svn="/usr/local/bin/svn"
 alias ctags="/usr/local/bin/ctags"
 
@@ -63,10 +63,10 @@ alias unity=Unity
 # alias gcSm="git commit -S -m"
 # alias gdh="git diff HEAD"
 alias cddev="cd ~/Development/GoProject && export GOPATH=~/Development/GoProject && export PATH=$PATH"
-alias cdmini="cd ~/Development/GoProject/src/minigame && export GOPATH=~/Development/GoProject && export PATH=$PATH"
+alias cdmini="cd ~/Development/GoProject/src/minigame && export GOPATH=~/Development/GoProject && export PATH=~/Development/GoProject/bin:$PATH"
 alias cdmi="cdmini"
 alias cdmn="cdmini"
-alias cdmt="cd ~/Development/GoProject/src/mituan && export GOPATH=~/Development/GoProject && export PATH=$PATH"
+alias cdmt="cd ~/Development/GoMituan/src/mituan && export GOPATH=~/Development/GoMituan; export PATH=~/Development/GoMituan/bin:$PATH"
 alias cdss="cd $HOME/QNap/Development/seasun/gopath && export GOPATH=$HOME/QNap/Development/seasun/gopath && export PATH=$PATH"
 alias cdwork="cd $HOME/QNap/Works/西山居"
 alias cdss2="cd $HOME/QNap2/Development/seasun/gopath && export GOPATH=$HOME/QNap2/Development/seasun/gopath && export PATH=$PATH"

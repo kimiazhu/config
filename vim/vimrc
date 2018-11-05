@@ -229,6 +229,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+nmap w+ :resize -3<CR>
+nmap w- :resize +3<CR>
+nmap w, :vertical resize +3<CR>
+nmap w. :vertical resize -3<CR>
+
 " NERDTree联动当前文件
 "autocmd BufEnter * silent! if (bufname('%') !~# 'NERD_tree_') && (bufname('%') !~# 'Tagbar') | cd %:p:h | NERDTreeCWD | wincmd p | endif
 
