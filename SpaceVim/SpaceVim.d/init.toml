@@ -84,7 +84,3 @@ merged = false
 name = "easymotion/vim-easymotion"
 merged = false
 enable = false
-
-
-
-" let g:spacevim_enable_ycm = 1
