@@ -128,3 +128,5 @@ cd $WS
 
 # cp /usr/local/Cellar/global/6.6.2_1/share/gtags/gtags.conf ~/.globalrc
 export GTAGSLABEL=pygments
+
+bindkey \^U backward-kill-line

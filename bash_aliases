@@ -51,6 +51,7 @@ if [ `uname` = "Darwin" ]; then
 	alias del="rmtrash"
 fi
 
+alias q='exit'
 alias sudo='sudo ' 
 alias xargs='xargs '
 alias env='env '
