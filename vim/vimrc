@@ -45,7 +45,10 @@ syntax on
 "colorscheme monokai
 set helplang=cn
 set encoding=utf-8
-set noundofile
+set undofile
+set backupdir=~/.vim/.backup//  
+set directory=~/.vim/.swp//
+set undodir=~/.vim/.undo//
 " set fileencoding=utf-8
 " see here: http://edyfox.codecarver.org/html/vim_fileencodings_detection.html
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
