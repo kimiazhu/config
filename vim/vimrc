@@ -50,6 +50,7 @@ set noundofile
 " see here: http://edyfox.codecarver.org/html/vim_fileencodings_detection.html
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set number
+set relativenumber
 set cursorline " highlight current line
 set ruler "open ruler in status bar
 set shiftwidth=2 "set << and >> move 4 spaces
@@ -201,6 +202,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeT
 let g:tagbar_ctags_bin='ctags'
 let g:tagbar_width = 30 "设置tagbar的宽度为30列，默认40
 noremap <F3> :Tagbar<CR>
+noremap ,b :Tagbar<CR>
 " 启动时自动focus
 " let g:tagbar_autofocus = 1
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen() "如果是c语言的程序的话，tagbar自动开启
