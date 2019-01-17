@@ -49,6 +49,8 @@ set undofile
 set backupdir=~/.vim/.backup//  
 set directory=~/.vim/.swp//
 set undodir=~/.vim/.undo//
+" https://vim.ink/viminfo.html
+set viminfo=!,'50,f0,<500,s100,:0,n~/.vim/viminfo
 " set fileencoding=utf-8
 " see here: http://edyfox.codecarver.org/html/vim_fileencodings_detection.html
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -272,3 +274,6 @@ let g:tagbar_type_go = {
 	\ 'ctagsbin'  : 'gotags',
 	\ 'ctagsargs' : '-sort -silent'
 \ }
+
+" 还原上次退出文件时光标所处位置
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
