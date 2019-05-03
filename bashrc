@@ -15,13 +15,14 @@ export GOROOT="/usr/local/go/"
 export GOPATH="$HOME/Development/GoProject"
 export GOOS="darwin"
 export GOARCH="amd64"
-export ISTIO_HOME="$HOME/.minikube/istio-0.8.0"
+#export ISTIO_HOME="$HOME/.minikube/istio-0.8.0"
+export ISTIO_HOME="$HOME/bin/istio/bin"
 
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export ADB_HOME="$HOME/Library/Android/sdk/platform-tools"
 #export MONO_HOME="/Applications/Unity/Unity.app/Contents/Frameworks/Mono"
 export JVMSTAT_HOME="$HOME/Applications/jvmstat"
-export PATH="$PATH:$JVMSTAT_HOME/bin:$ADB_HOME:$GOPATH/bin:$REDIS_HOME/bin"
+export PATH="$PATH:$JVMSTAT_HOME/bin:$ADB_HOME:$GOPATH/bin:$REDIS_HOME/bin:/Applications/Redis.app/Contents/Resources/Vendor/redis/bin"
 
 _SHELL=`ps | grep $$ | grep -v grep | awk '{print $4}'`
 _IS_BASH=`echo ${_SHELL} | grep "bash"`
@@ -30,7 +31,7 @@ if [ -n "$_IS_BASH" ]; then
   export PS1="[\u@\h \W]\$ "
 fi
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
 export JVMSTAT_JAVA_HOME="$JAVA_HOME"
 export MAVEN_HOME="/usr/local/maven/apache-maven-3.3.9"
 export GRADLE_HOME="/usr/local/gradle/gradle-3.4"
@@ -64,8 +65,6 @@ alias unity=Unity
 # alias gdh="git diff HEAD"
 alias cddev="cd ~/Development/GoProject && export GOPATH=~/Development/GoProject && export PATH=$PATH"
 alias cdmini="cd ~/Development/GoProject/src/minigame && export GOPATH=~/Development/GoProject && export PATH=~/Development/GoProject/bin:$PATH"
-alias cdmi="cdmini"
-alias cdmn="cdmini"
 alias cdmt="cd ~/Development/GoMituan/src/mituan && export GOPATH=~/Development/GoMituan; export PATH=~/Development/GoMituan/bin:$PATH"
 alias cdss="cd $HOME/QNap/Development/seasun/gopath && export GOPATH=$HOME/QNap/Development/seasun/gopath && export PATH=$PATH"
 alias cdwork="cd $HOME/QNap/Works/西山居"

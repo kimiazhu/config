@@ -130,3 +130,4 @@ cd $WS
 export GTAGSLABEL=pygments
 
 bindkey \^U backward-kill-line
+export PATH="/usr/local/opt/curl/bin:$PATH"
