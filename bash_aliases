@@ -14,6 +14,7 @@ add-alias ()
 alias kc="kubectl"
 alias ic="istioctl"
 alias dk="docker"
+alias dfimage="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock centurylink/dockerfile-from-image"
 
 ############################################################
 ## golang
