@@ -39,7 +39,8 @@ export PATH=$BREW_HOME/bin:/usr/local/opt/gnu-sed/libexec/gnubin:$PATH/bin:$PATH
 export HOMEBREW_GITHUB_API_TOKEN="4eabbfd877bdde14759617ff743a71907a650eb4"
 
 # alias getopt="/usr/local/Cellar/gnu-getopt/1.1.6/bin/getopt"
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+#alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+alias vim=/usr/local/bin/vim
 
 # alias python="/usr/bin/python"
 alias svn="/usr/local/bin/svn"
