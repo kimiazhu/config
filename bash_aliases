@@ -9,6 +9,14 @@ add-alias ()
 }
 
 ############################################################
+## kubernets and docker
+############################################################
+alias kc="kubectl"
+alias ic="istioctl"
+alias dk="docker"
+alias dfimg="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock centurylink/dockerfile-from-image"
+
+############################################################
 ## golang
 ############################################################
 alias gob="go build"
@@ -70,6 +78,9 @@ alias c="clear"
 
 alias path='echo -e ${PATH//:/\\n}'
 alias ax="chmod a+x"
+
+alias pd='pushd'
+alias ppd='popd'
 
 ############################################################
 ## List
