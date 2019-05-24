@@ -245,6 +245,7 @@ nmap w. :vertical resize -3<CR>
 " NERDTree联动当前文件
 "autocmd BufEnter * silent! if (bufname('%') !~# 'NERD_tree_') && (bufname('%') !~# 'Tagbar') | cd %:p:h | NERDTreeCWD | wincmd p | endif
 
+let g:go_def_mode = 'gopls'
 
 " GoTags config. Install by `go get -u github.com/jstemmer/gotags`
 " See https://github.com/jstemmer/gotags
