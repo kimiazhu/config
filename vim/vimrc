@@ -131,6 +131,8 @@ let g:go_def_reuse_buffer = 1
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
 let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
+let g:go_def_mode = 'gopls'
+" let g:go_info_mode = 'gopls'
 
 " ycm config: https://jonasdevlieghere.com/a-better-youcompleteme-config/
 " 跳转到定义处
@@ -245,7 +247,6 @@ nmap w. :vertical resize -3<CR>
 " NERDTree联动当前文件
 "autocmd BufEnter * silent! if (bufname('%') !~# 'NERD_tree_') && (bufname('%') !~# 'Tagbar') | cd %:p:h | NERDTreeCWD | wincmd p | endif
 
-let g:go_def_mode = 'gopls'
 
 " GoTags config. Install by `go get -u github.com/jstemmer/gotags`
 " See https://github.com/jstemmer/gotags
