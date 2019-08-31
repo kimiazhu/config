@@ -8,6 +8,8 @@ add-alias ()
    alias $name
 }
 
+alias expgm='export GOPATH=/Users/kc/Development/mituan && export PATH=~/Development/mituan/bin:~/Development/GoProject/bin:$PATH && export GO111MODULE=on'
+alias exphelm='export PATH=~/Development/helm-2.11.0:$PATH'
 ############################################################
 ## kubernets and docker
 ############################################################

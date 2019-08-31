@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+# Copyright 2019 ZHU HAIHUA <kimiazhu@gmail.com>.
+# All rights reserved.
+# Use of this source code is governed by MIT
+# license that can be found in the LICENSE file.
+#
+# Description: lcp used to copy the current file or path 
+#              name to clipboard (FOR MAC)
+# Author: ZHU HAIHUA <kimiazhu@gmail.com>
+# Since: 2019-06-19 10:14
+
+set -o errexit
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+PLAIN='\033[0m'
+
+CWD=$(pwd)
+
+function exits() {
+  if [[ -n "$2" ]]; then
+    echo $2
+  fi
+  cd $CWD
+  exit $1
+}
+
+# 获取参数1的绝对目录位置，请通过反引号获取返回值
+function absdir() {
+  if [[ -d "$1" ]]; then
+    cd $1
+    echo `pwd`
+	elif [[ -f "$1" ]]; then
+		cd `dirname $1`
+		echo `pwd`
+  else
+    exits 1 "no such file or directory: $1"
+  fi
+}
+
+#================== common function end ==================
+
+__ScriptVersion="v1.0"
+
+#===  FUNCTION  ================================================================
+#         NAME:  usage
+#  DESCRIPTION:  Display usage information.
+#===============================================================================
+function usage ()
+{
+  echo "Usage :  $0 [options] [--]
+
+    Options:
+    -f|full       Copy the full path and file name
+    -h|help       Display this message
+    -v|version    Display script version"
+
+}    # ----------  end of function usage  ----------
+
+#-----------------------------------------------------------------------
+#  Handle command line arguments
+#-----------------------------------------------------------------------
+
+while getopts ":hvf" opt
+do
+  case $opt in
+
+  f|full     ) FULL_NAME=yes ;;
+
+  h|help     )  usage; exit 0   ;;
+
+  v|version  )  echo "$0 -- Version $__ScriptVersion"; exit 0   ;;
+
+  * )  echo -e "\n  Option does not exist : $OPTARG\n"
+      usage; exit 1   ;;
+
+  esac    # --- end of case ---
+done
+shift $(($OPTIND-1))
+
+if [[ -z "$1" ]]; then
+  exits 1 "missing file or dir name..."
+fi
+
+if [[ -d "$1" ]]; then
+  LS=$(ls -d "$1")
+else
+  LS=$(ls "$1")
+fi
+
+if [[ -n "$FULL_NAME" ]]; then
+  echo -n "$LS" | sed "s:^:`pwd`/: " | pbcopy
+else 
+  echo -n "$LS" | pbcopy
+fi
+

@@ -38,5 +38,12 @@ function absdir() {
   fi
 }
 
+pushd () {
+  command pushd "$@" > /dev/null
+}
+
+popd () {
+  command popd "$@" > /dev/null
+}
 #================== common function end ==================
 
