@@ -11,7 +11,7 @@ set easymotion
 let g:EasyMotion_leader_key=','
 "nmap <Leader>s <Plug>(easymotion-overwin-f)
 "nmap <Leader>S <Plug>(easymotion-overwin-f2)
-nmap S <Plug>(easymotion-f2)
+nmap S <Plug>(easymotion-s2)
 " nmap <Leader>l <Plug>(easymotion-overwin-f2)
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
