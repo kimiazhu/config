@@ -1,0 +1,13 @@
+---
+
+Copyright %YEAR%, Tencent Inc.  
+All rights reserved.  
+
+- Description: %FILE%  
+- Author: %USER% <%MAIL%>  
+- Since: %FDATE%  
+- Version: v0.1  
+
+---
+ 
+#
