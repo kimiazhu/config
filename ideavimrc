@@ -6,15 +6,35 @@
 " Early Access Version of IdeaVim is here:
 " https://plugins.jetbrains.com/plugins/eap/ideavim
 
+" 以下是EasyMotion快捷键，需要先安装easymotion才生效
+set easymotion
+let g:EasyMotion_leader_key=','
+"nmap <Leader>s <Plug>(easymotion-overwin-f)
+"nmap <Leader>S <Plug>(easymotion-overwin-f2)
+nmap S <Plug>(easymotion-s2)
+" nmap <Leader>l <Plug>(easymotion-overwin-f2)
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+" nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+" nmap s <Plug>(easymotion-overwin-f2)
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
 set cursorline " 突出显示当前行
 set ruler " 打开状态栏标尺
-set shiftwidth=4 " 设定 << 和 >> 命令移动时的宽度为 4
-set softtabstop=4 " 使得按退格键时可以一次删掉 4 个空格
-set tabstop=4 " 设定 tab 长度为 4
+set shiftwidth=2 " 设定 << 和 >> 命令移动时的宽度为 2
+set softtabstop=2 " 使得按退格键时可以一次删掉 4 个空格
+set tabstop=2 " 设定 tab 长度为 2
 set nobackup " 覆盖文件时不备份
 set autochdir " 自动切换当前目录为当前文件所在的目录
 " filetype plugin indent on " 开启插件
-set backupcopy=yes " 设置备份时的行为为覆盖
+" set backupcopy=yes " 设置备份时的行为为覆盖
 set ignorecase smartcase " 搜索时忽略大小写，但在有一个或以上大写字母时仍保持对大小写敏感
 set nowrapscan " 禁止在搜索到文件两端时重新搜索
 set incsearch " 输入搜索内容时就显示搜索结果
