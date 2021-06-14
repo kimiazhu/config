@@ -37,6 +37,7 @@ Plugin 'rking/ag.vim'
 " Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'towolf/vim-helm'
+Plugin 'pedrohdz/vim-yaml-folds'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
